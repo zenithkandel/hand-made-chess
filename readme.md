@@ -1,0 +1,1 @@
+this is zenith trying to make chess without using ai to have fun coding and solving problems
