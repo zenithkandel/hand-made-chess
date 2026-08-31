@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
     margin:0;
     padding: 0;
     font-family: "Black Ops One";
@@ -53,4 +56,14 @@ h1 i{text-shadow: none;}
 
 #board td.white{
     background: rgb(184, 184, 184);
+}
+
+
+#board td img{
+    height: 80%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    user-select: none;
+    transform: translate(-50%,-50%);
 }
