@@ -14,8 +14,22 @@ body{
 
 h1{
     text-align: center;
+    text-shadow: 8px 8px 2px #363636;
     margin-top: 50px;
     text-transform: uppercase;
     letter-spacing: 8px;
     font-size: 48px;
 }
+h1 i{text-shadow: none;}
+.canvas{
+    height: 70vh;
+    width: 70vh;
+    background: #4a4a4a;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+box-shadow: 8px 8px 2px #363636;
+/* border-radius: 7px; */
+}
+
