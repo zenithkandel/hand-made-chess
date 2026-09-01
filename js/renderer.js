@@ -43,10 +43,10 @@ piece mapping:
 5 - queen
 6 - king
 
-0 trailing after the piece signifies that the piece is white and trailing 1 signifies that the piece is black
+0 trailing after the piece signifies that the piece is black and trailing 1 signifies that the piece is white
 eg: 
-10 means white pawn
-11 means black pawn
+10 means black pawn
+11 means white pawn
 */
 function createNewBoard() {
     gameBoard = [];
@@ -81,9 +81,9 @@ function renderBoardToDOM() {
             var elem = gameBoard[i][j];
             var col = "";
             if (elem % 10 == 1) {
-                col = "black";
+                col = "white";
             }
-            else { col = "white" }
+            else { col = "black" }
             elem /= 10;
             elem = Math.round(elem);
             if (elem == 1) url = image_list[col]["pawn"];
