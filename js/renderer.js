@@ -1,6 +1,6 @@
 let boardDOM = document.querySelector("#board");
 let color = "black";
-let gameBoard = [];
+let gameBoard;
 function renderEmptyTable() {
     for (i = 0; i < 8; i++) {
         rowDOM = document.createElement("tr");
@@ -49,6 +49,7 @@ eg:
 11 means black pawn
 */
 function createNewBoard() {
+    gameBoard = [];
     for (j = 0; j < 8; j++) {
         let row = [];
         if (j == 0) {
@@ -68,6 +69,7 @@ function createNewBoard() {
         }
         gameBoard.push(row);
     }
+    localStorage.setItem("zenith-chess-board",JSON.stringify(gameBoard));
     return gameBoard;
 }
 
@@ -82,14 +84,14 @@ function renderBoardToDOM() {
                 col = "black";
             }
             else { col = "white" }
-            elem/=10;
+            elem /= 10;
             elem = Math.round(elem);
-            if(elem == 1) url = image_list[col]["pawn"];
-            if(elem == 2) url = image_list[col]["rook"];
-            if(elem == 3) url = image_list[col]["knight"];
-            if(elem == 4) url = image_list[col]["bishop"];
-            if(elem == 5) url = image_list[col]["queen"];
-            if(elem == 6) url = image_list[col]["king"];
+            if (elem == 1) url = image_list[col]["pawn"];
+            if (elem == 2) url = image_list[col]["rook"];
+            if (elem == 3) url = image_list[col]["knight"];
+            if (elem == 4) url = image_list[col]["bishop"];
+            if (elem == 5) url = image_list[col]["queen"];
+            if (elem == 6) url = image_list[col]["king"];
             document.querySelector(`.cell${i}${j}`).innerHTML = `
             <img src="${url}">
             `
@@ -99,5 +101,10 @@ function renderBoardToDOM() {
 }
 
 renderEmptyTable();
-createNewBoard();
+if (localStorage.getItem("zenith-chess-board")) {
+    gameBoard = JSON.parse(localStorage.getItem("zenith-chess-board"));
+}
+else {
+    createNewBoard();
+}
 renderBoardToDOM();
