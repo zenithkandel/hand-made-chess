@@ -76,6 +76,7 @@ h1 i{text-shadow: none;}
     box-sizing: border-box;
     filter: contrast(0.7);
     border: 4px solid greenyellow;
+    /* background: yell; */
 }
 
 #board td img{
